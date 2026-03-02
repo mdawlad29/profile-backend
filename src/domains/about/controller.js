@@ -29,7 +29,7 @@ const getAllAbout = async (req, res) => {
 
 const getAboutById = async (req, res) => {
   try {
-    const result = await service.getAboutById(req.params.id);
+    const result = await service.getAboutById(req.params.id, res);
     return successHandler(res, {
       statusCode: 200,
       data: result,
@@ -42,7 +42,7 @@ const getAboutById = async (req, res) => {
 
 const updateAbout = async (req, res) => {
   try {
-    const result = await service.updateAbout(req.params.id, req.body);
+    const result = await service.updateAbout(req.params.id, req.body, res);
     return successHandler(res, {
       statusCode: 200,
       data: result,
@@ -55,7 +55,7 @@ const updateAbout = async (req, res) => {
 
 const deleteAbout = async (req, res) => {
   try {
-    await service.deleteAbout(req.params.id);
+    await service.deleteAbout(req.params.id, res);
     return successHandler(res, {
       statusCode: 200,
       message: "About deleted successfully",

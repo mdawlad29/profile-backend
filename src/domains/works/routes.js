@@ -3,10 +3,10 @@ import controller from "./controller.js";
 
 const worksRouter = express.Router();
 
-// worksRouter.post("/", controller.createAbout);
+worksRouter.post("/", controller.createWorks);
 worksRouter.get("/", controller.getAllWorks);
-// worksRouter.get("/:id", controller.getAboutById);
-// worksRouter.patch("/:id", controller.updateAbout);
-// worksRouter.delete("/:id", controller.deleteAbout);
+worksRouter.get("/:id", controller.getWorksById);
+worksRouter.patch("/:id", controller.updateWorks);
+worksRouter.delete("/:id", controller.deleteWorks);
 
 export default worksRouter;
