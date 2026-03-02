@@ -42,7 +42,12 @@ A **Node.js REST API** for managing profile content (`about` and `works`) using 
 
 ```bash
 git clone https://github.com/mdawlad29/profile-backend.git
+
 cd profile-backend
+
+# Install dependencies
 npm install
+
+# Run locally
 npm run start
 ```
