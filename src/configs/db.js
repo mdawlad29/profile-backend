@@ -7,9 +7,9 @@ const { Pool } = pkg;
 
 const db = new Pool({
   connectionString: process.env.DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized: false,
-  // },
+  ssl: process.env.DATABASE_URL?.includes("render")
+    ? { rejectUnauthorized: false }
+    : false,
 });
 
 db.on("connect", () => {
