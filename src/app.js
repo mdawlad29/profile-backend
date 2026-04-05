@@ -7,7 +7,7 @@ import apiRouter from "./routes/routes.js";
 dotenv.config({});
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Check DB connection properly
 (async () => {

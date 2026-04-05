@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: profile-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        fromDatabase:
+          name: profile-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: profile-db
+    plan: free
+    databaseName: profile_db
+    user: profile_user
